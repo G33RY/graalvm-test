@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources>
+    <xa-datasource jndi-name="java:jboss/datasources/master-manager" pool-name="master-manager" enabled="true" use-ccm="false">
+        <xa-datasource-property name="DatabaseName">
+            r2g_master_manager?characterEncoding=UTF-8&amp;useSSL=false&amp;sessionVariables=sql_mode=''
+        </xa-datasource-property>
+        <xa-datasource-property name="ServerName">
+            localhost
+        </xa-datasource-property>
+        <xa-datasource-property name="AutoReconnectForPools">
+            true
+        </xa-datasource-property> 
+        <driver>mysql</driver>
+        <xa-pool>
+            <min-pool-size>0</min-pool-size>
+            <max-pool-size>25</max-pool-size>
+            <prefill>true</prefill>
+            <is-same-rm-override>false</is-same-rm-override>
+            <interleaving>false</interleaving>
+            <pad-xid>false</pad-xid>
+            <wrap-xa-resource>false</wrap-xa-resource>
+        </xa-pool>
+        <security>
+            <user-name>root</user-name>
+            <password>Admin0312</password>
+        </security>
+        <validation>
+            <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLValidConnectionChecker"/>
+            <validate-on-match>true</validate-on-match>
+            <background-validation>false</background-validation>
+            <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLExceptionSorter"/>
+        </validation>
+        <statement>
+            <prepared-statement-cache-size>32</prepared-statement-cache-size>
+            <share-prepared-statements>true</share-prepared-statements>
+        </statement>
+    </xa-datasource>
+</datasources>
